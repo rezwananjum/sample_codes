@@ -64,10 +64,12 @@
 			var user_id = "/"+a+"/profilePic";
 			//var c = a;
 			console.log(user_id);
-			FB.api(user_id,'GET', {fields:'picture.width(150).height(150).redirect:false'}, function(response) {
-				console.log(response);
-				document.getElementById('user_status').innerHTML = "<img src='" + response.profilePic.data.url + "'>";
-			});
+			// https://graph.facebook.com/{version}/{user_id}?fields=picture.width(150).height(150)
+
+    FB.api('/' + user_id, 'GET', { fields:'picture.width(150).height(150)' }, function(response) {
+        document.getElementById('user_status').innerHTML = "<img src='" + response.picture.data.url + "'>";
+    });
+			
 		}
 
 
