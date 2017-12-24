@@ -1,0 +1,47 @@
+/*nester,referenceing parent,neasted properties handling, placeholder selection sass rules comment passing sass to css*/
+/* missing arguments */
+.container {
+  background-color: #e4e4e4;
+  border: 1px solid black;
+  width: 450px;
+  margin-top: 20px; }
+
+.container {
+  /* & in SassScript implementation */ }
+  .container h1 {
+    font-size: 25px;
+    color: #E45456; }
+  .container h3 {
+    font-size: 20px; }
+  .container p {
+    /* parenthesis testing in font_size*/
+    font-size: 17px;
+    color: #3C7949; }
+  .container .inside_pera {
+    font-family: Lucida Sans Unicode;
+    font-size: 20px;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: black; }
+  .container .box h1 {
+    font-size: 25px;
+    color: #E45456; }
+  .container .box p {
+    font-size: 25px;
+    /* color fuction pasing*/
+    color: #d185e0; }
+  .container .box .frst_para, .container .box .sec_para {
+    /* if activity */
+    color: green; }
+  .container .box .sec_para {
+    font-size: 20px; }
+  .container a {
+    font-size: 20px; }
+    .container a:hover {
+      background-color: #e4e4e4; }
+
+/* function directive implementation */
+#set_width {
+  padding-left: 95px; }
+
+/*# sourceMappingURL=style.css.map */

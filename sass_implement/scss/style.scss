@@ -1,0 +1,77 @@
+//nester,referenceing parent,neasted properties handling, placeholder selection sass rules
+/*nester,referenceing parent,neasted properties handling, placeholder selection sass rules comment passing sass to css*/
+
+/* missing arguments */
+@mixin bordered($width: 2px) {
+   background-color: #e4e4e4;
+   border: $width solid black;
+   width: 450px;
+}
+
+.container  {
+   @include bordered(1px);
+   margin-top : 20px;
+}
+
+.container{
+
+   h1{
+      font-size: 25px;
+      color:#E45456;
+   }
+   h3{
+      font-size: 20px;
+   }
+   
+   p{
+   /* parenthesis testing in font_size*/
+      font-size:  5px + (6px * 2);
+      color:#3C7949;
+   }
+   .inside_pera{
+           font: {
+                    family: Lucida Sans Unicode;
+                      size:20px;
+                    weight: bold;
+                   variant: small-caps;
+                 }
+                 color: black;
+               }
+
+   .box{
+      h1{
+         font-size: 25px;
+         color:#E45456;
+      }
+      
+      p{
+         font-size: 25px;
+         /* color fuction pasing*/
+         color: hsl(290,60%,70%);
+      }
+
+      .frst_para {
+      /* if activity */
+                   color: if( 1 + 1 == 2 , green , red);
+                 }
+      .sec_para {
+                   @extend .frst_para;
+                   font-size:20px;
+                }
+     }
+/* & in SassScript implementation */
+   a {
+    font-size: 20px;
+    &:hover { background-color: #e4e4e4;}
+     }
+
+}
+/* function directive implementation */
+$first-width: 5px;
+$second-width: 5px;
+
+@function adjust_width($n) {
+   @return $n * $first-width + ($n - 1) * $second-width;
+}
+
+#set_width { padding-left: adjust_width(10); }
