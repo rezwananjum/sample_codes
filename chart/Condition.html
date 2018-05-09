@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="jquery.js"></script>
+		<script>
+		
+		$(document).ready(function() {
+			$("a.on").click(function(){	
+				$('table td:nth-child(5),td:nth-child(4)').each(function() {
+					var Sales = $(this).text();
+
+					if ((Sales > 0) && (Sales < 250000)) {
+						$(this).css('backgroundColor', '#f76e6e'); 
+					}
+					else if((Sales > 250000) && (Sales < 500000)) {
+						$(this).css('backgroundColor', '#edb949'); 
+					}
+					else if((Sales > 500000) && (Sales < 750000)) {
+						$(this).css('backgroundColor', '#f2f381'); 
+					}
+					else {
+						$(this).css('backgroundColor', '#99faa0'); 
+					}
+				});
+				event.preventDefault();
+			});
+			$("a.off").click(function(){	
+				$('table td:nth-child(5)').each(function() {
+					$(this).css('backgroundColor', ''); 
+				});
+			});
+		});
+
+		</script>
+			
+				
+		<style type="text/css">
+		table {border: 1px solid black; padding: 0;}
+				
+		th {background-color: #3f73c1; color: white; border: 1px solid black; padding: 2px;}
+		
+		tr.one {background-color: #dbdbdb;}
+
+		tr.two {background-color: #efefef;}
+		
+		td {padding: 4px; margin: 0;}
+		
+		</style>
+		
+		<title>Conditional Formatting</title>
+	</head>
+	
+	<body>
+
+	<h1>Conditional Formatting Demo</h1>
+	
+	<a href="#" class="on"><b>Turn on conditional formatting</b></a>
+	&nbsp;&nbsp;&nbsp;
+	<a href="#" class="off"><b>Turn off conditional formatting</b></a>
+	<br />
+	<br />
+	<b><u>Key</u></b><br />
+	<span style="background-color: #f76e6e;">Red = 0 - $250,000</span><br />
+	<span style="background-color: #edb949;">Orange = $250,000 - $500,000</span><br />
+	<span style="background-color: #f2f381;">Yellow = $500,000 - $750,000</span><br />
+	<span style="background-color: #99faa0;">Green = $750,000 and up</span><br />
+	<br />
+	
+	<table border="1" cellspacing="0">
+		<tr>
+			<th> Customer #</th> 
+			<th> Customer Name</th> 
+			<th> Salesman</th> 
+			<th>Country</th> 
+			<th>YTD Sales ($)</th>
+		</tr>
+			
+		<tr class="one">
+			<td>100007</td>
+			<td>A-1 Cycle City</td>
+			<td>Amy Schilling</td>
+			<td>United States</td>
+			<td>840677</td>
+		</tr>
+		<tr class="two">
+			<td>100004</td>
+			<td>A/B Cycle Shoppe</td>
+			<td>Rick Sterling</td>
+			<td>United States</td>
+			<td>700136	 </td>	
+		</tr>
+		<tr class="one">
+			<td>100062</td>
+			<td>Accessory Zone</td>
+			<td>Sally Peterson</td>
+			<td>United States</td>
+			<td>686420	</td> 	
+		</tr>
+		<tr class="two">
+			<td>100005</td>
+			<td>Ace Hardware</td>
+			<td>Sal Stangarone</td>
+			<td>United States</td>
+			<td>548345	 </td>	
+		</tr>
+		<tr class="one">
+			<td>102053</td>
+			<td>Action Bikes</td>
+			<td>Scott Carlson</td>
+			<td>United Kingdom</td>
+			<td>123894	 	</td>
+		</tr>
+		<tr class="two">
+			<td>100031</td>
+			<td>Advanced Bicycles</td>
+			<td>Rick Sterling</td>
+			<td>United States</td>
+			<td>548340	 </td>	
+		</tr>
+		<tr class="one">
+			<td>102004</td>
+			<td>Aires Cycles</td>
+			<td>Patricia Renolds</td>
+			<td>Argentina</td>
+			<td>700136	</td> 	
+		</tr>
+		<tr class="two">
+			<td>100100</td>
+			<td>All Weather Cycles</td>
+			<td>Rick Sterling</td>
+			<td>United States</td>
+			<td>540339</td>	 	
+		</tr>
+		<tr class="one">
+			<td>102036</td>
+			<td>Alton Bicycles</td>
+			<td>Michael Coleman</td>
+			<td>Korea</td>
+			<td>229202	 </td>	
+		</tr>
+		<tr class="two">
+			<td>101051
+			<td>Amardeep Cycles</td>
+			<td>Brian Kurtzman</td>
+			<td>India</td>
+			<td>456440	 </td>	
+		</tr>
+		<tr class="one">
+			<td>100022
+			<td>Ames Supplies Inc.</td>
+			<td>Rick Sterling</td>
+			<td>United States</td>
+			<td>402046	</td> 	
+		</tr>
+		<tr class="two">
+			<td>100002</td>
+			<td>AAM-Equipto Bike Sales</td>
+			<td>Sally Peterson</td>
+			<td>United States</td>
+			<td>395102	</td> 	
+		</tr>
+		<tr class="one">
+			<td>100003</td>
+			<td>ABCO Corporation</td>
+			<td>Amy Schilling</td>
+			<td>United States</td>
+			<td>582056	</td> 	
+		</tr>
+		<tr class="two">
+			<td>101032</td>
+			<td>B.O.C</td>
+			<td>Scott Carlson</td>
+			<td>Germany</td>
+			<td>920250	</td> 	
+		</tr>
+		<tr class="one">
+			<td>100008</td>
+			<td>Bernard's Schwinn Cyclery</td>
+			<td>Sal Stangarone</td>
+			<td>United States</td>
+			<td>589502	 </td>	
+		</tr>
+		<tr class="two">
+			<td>100038</td>
+			<td>Bicycle Barn</td>
+			<td>Amy Schilling</td>
+			<td>United States</td>
+			<td>925010	</td> 	
+		</tr>
+		<tr class="one">
+			<td>101002</td>
+			<td>Bicycle Company e.U</td>
+			<td>Scott Carlson</td>
+			<td>Austria</td>
+			<td>395102</td>	 	
+		</tr>
+		<tr class="two">
+			<td>101022</td>
+			<td>Bike & Cicli</td>
+			<td>Scott Carlson</td>
+			<td>Switzerland</td>
+			<td>402046</td>	 	
+		</tr>
+		<tr class="two">
+			<td>101068</td>
+			<td>Bike Brasil</td>
+			<td>Patricia Renolds</td>
+			<td>Brazil</td>
+			<td>454543</td>	 	
+		</tr>
+		<tr class="one">
+			<td>101018</td>
+			<td>Bike Center</td>
+			<td>Scott Carlson</td>
+			<td>Switzerland</td>
+			<td>948100</td>	 	
+		</tr>
+		<tr class="two">
+			<td>101026</td>
+			<td>Bike Dream</td>
+			<td>Scott Carlson</td>
+			<td>Portugal</td>
+			<td>454534</td>	 	
+		</tr>
+		<tr class="one">
+			<td>102054</td>
+			<td>Bike Fix</td>
+			<td>Scott Carlson</td>
+			<td>United Kingdom</td>
+			<td>454404</td>
+		</tr>
+		<tr class="two">
+			<td>101062</td>
+			<td>Bike Hire Ireland</td>
+			<td>Scott Carlson</td>
+			<td>Ireland</td>
+			<td>686420</td> 	
+		</tr>
+
+	</table>
+		
+	
+	</body>
+</html>		
